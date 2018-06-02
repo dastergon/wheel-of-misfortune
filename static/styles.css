@@ -1,0 +1,110 @@
+@charset "UTF-8";
+@import url("http://fonts.googleapis.com/css?family=Roboto:500,300");
+
+body {
+    font-family: "Roboto", Helvetica, sans-serif;
+    font-weight: 350;
+    background-color: #f8f8f8;
+}
+
+
+li a {
+    text-decoration: none;
+    color: #555f66;
+}
+li a:hover {
+    text-decoration:underline;
+}
+
+text {
+    pointer-events:none;
+}
+
+#wheel {
+    position:absolute;
+}
+
+#incident{
+    border-width:5px;
+    word-wrap: break-word;
+    position:relative;
+    width: 500px;
+    height: 600px;
+    left: 620px;
+}
+
+#incident p {
+    position: absolute;
+    top:50%;
+    -webkit-transform:translate(0,-50%);
+            transform:translate(0,-50%);
+}
+
+header.major {
+    padding: 0.5em;
+    text-align: center;
+}
+
+header p {
+    color: #444;
+}
+
+em a {
+    color: #444;
+    text-decoration: none;
+}
+
+em a:hover {
+    text-decoration: underline;
+}
+
+#footer {
+    background: #f8f8f8;
+    padding: 1em 0 1em 0;
+    color: #bbb;
+    font-size: 0.9em;
+    text-align: center;
+}
+
+#footer a {
+    color: #bbb;
+    text-decoration: none;
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.5); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}

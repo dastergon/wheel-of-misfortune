@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+    <title>Wheel of Misfortune</title>
+    <meta name="author" content="Pavlos Ratis">
+    <meta name="description" content="Disaster role playing game">
+    <meta name="keywords" content="Incident Response,Site Reliability Engineering,SRE">
+    <link rel="stylesheet" href="static/styles.css">
+
+</head>
+
+<body>
+    <a href="https://github.com/dastergon/wheel-of-misfortune">
+        <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67"
+            alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png">
+    </a>
+    <header class="major">
+        <h2>Wheel of Misfortune</h2>
+        <p>Role Playing Game for Incident Management Training
+            <br />
+            <small>
+                <em>Inspired by the
+                    <a href="https://landing.google.com/sre/book/chapters/accelerating-sre-on-call.html#xref_training_disaster-rpg">Site Reliability Engineering book</a>
+                </em>
+            </small>
+        </p>
+        <button id="myBtn">Instructions</button>
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p>Game Master: Insert your incident scenarios (in JSON format) into the "general_incidents.json" file inside the incidents folder. Use "label" for the title of the incident and "description" for the description of the incident. Pick a trainee to spin the wheel and solve the incident. <br /> You can read a comprehensvie example on how to conduct the exercise
+                    <a href="https://landing.google.com/sre/book/chapters/accelerating-sre-on-call.html#xref_training_disaster-rpg">here</a>, but, feel free to improvise on the roles, duration and frequency. Have fun!</p>
+            </div>
+        </div>
+        <script>
+            var modal = document.getElementById('myModal');
+            var btn = document.getElementById("myBtn");
+            var span = document.getElementsByClassName("close")[0];
+
+            // When the user clicks the button, open the modal
+            btn.onclick = function () {
+                modal.style.display = "block";
+            }
+
+            // When the user clicks on <span> (x), close the modal
+            span.onclick = function () {
+                modal.style.display = "none";
+            }
+
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function (event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        </script>
+    </header>
+
+    <div id="wheel"> </div>
+    <div id="incident">
+        <p></p>
+    </div>
+    <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script src="static/wheel.js"></script>
+    <h3>Resources</h3>
+    <ul>
+        <li>
+            <a href="https://landing.google.com/sre/book/chapters/accelerating-sre-on-call.html#xref_training_disaster-rpg">Disaster Role Playing</a>
+        </li>
+        <li>
+            <a href="https://landing.google.com/sre/book/chapters/postmortem-culture.html">Postmortem Culture: Learning from Failure</a>
+        </li>
+        <li>
+            <a href="https://github.com/dastergon/awesome-sre">Site Reliability Engineering Resources</a>
+        </li>
+    </ul>
+    <footer id="footer">
+        <a href="https://dastergon.gr">Pavlos Ratis</a> | 2018
+    </footer>
+</body>
+
+</html>

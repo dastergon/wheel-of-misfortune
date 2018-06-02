@@ -1,0 +1,34 @@
+[
+    {
+        "label": "Incident 1",
+        "description": "MySQL master does not accept writes"
+    },
+    {
+        "label": "Incident 2",
+        "description": "Load balancer is down"
+    },
+    {
+        "label": "Incident 3",
+        "description": "Blob storage system is unable to store objects"
+    },
+    {
+        "label": "Incident 4",
+        "description": "DC eu-1 has a power outage"
+    },
+    {
+        "label": "Incident 5",
+        "description": "Redis server is randomly killed"
+    },
+    {
+        "label": "Incident 6",
+        "description": "High HTTP 5xx error rate"
+    },
+    {
+        "label": "Incident 7",
+        "description": "High query latency in the RPC server"
+    },
+    {
+        "label": "Incident 7",
+        "description": "LDAP clients cannot query LDAP server"
+    }
+]
