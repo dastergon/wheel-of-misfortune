@@ -1,40 +1,48 @@
 [
     {
+        "ID": "1",
         "label": "Incident 1",
         "difficulty": "4",
         "description": "MySQL master does not accept writes"
     },
     {
+        "ID": "2",
         "label": "Incident 2",
         "difficulty": "2",
         "description": "Load balancer is down"
     },
     {
+        "ID": "3",
         "label": "Incident 3",
         "difficulty": "5",
         "description": "Blob storage system is unable to store objects"
     },
     {
+        "ID": "4",
         "label": "Incident 4",
         "difficulty": "4",
         "description": "DC eu-1 has a power outage"
     },
     {
+        "ID": "5",
         "label": "Incident 5",
         "difficulty": "3",
         "description": "Redis server is randomly killed"
     },
     {
+        "ID": "6",
         "label": "Incident 6",
         "difficulty": "2",
         "description": "High HTTP 5xx error rate"
     },
     {
+        "ID": "7",
         "label": "Incident 7",
         "difficulty": "1",
         "description": "High query latency in the RPC server"
     },
     {
+        "ID": "8",
         "label": "Incident 8",
         "difficulty": "4",
         "description": "LDAP clients cannot query LDAP server"
