@@ -8,10 +8,10 @@
 
     <title>Wheel of Misfortune</title>
     <meta name="author" content="Pavlos Ratis">
-    <meta name="description" content="Disaster role playing game">
-    <meta name="keywords" content="Incident Response,Site Reliability Engineering,SRE">
+    <meta name="description" content="A role-playing game for incident management training">
+    <meta name="keywords" content="Incident Response,Trainng,Site Reliability Engineering,SRE,Oncall">
     <link rel="stylesheet" href="static/styles.css">
-
+    <link rel='shortcut icon' type='image/x-icon' href='favicon.ico' />
 </head>
 
 <body>
@@ -20,24 +20,83 @@
             alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png">
     </a>
     <header class="major">
-        <!-- <h2>Wheel of Misfortune</h2> -->
-        <div class="main-logo">
-            <img src="main-logo.png" />
-        </div>
-        <p>Role Playing Game for Incident Management Training
-            <br />
+        <img src="main-logo.png" />
+        <p>A role-playing game for incident management training<br />
             <small>
                 <em>Inspired by the
-                    <a href="https://landing.google.com/sre/book/chapters/accelerating-sre-on-call.html#xref_training_disaster-rpg">Site Reliability Engineering book</a>
+                    <a href="https://landing.google.com/sre/book/chapters/accelerating-sre-on-call.html#xref_training_disaster-rpg">Site
+                        Reliability Engineering book</a>
                 </em>
             </small>
         </p>
-        <button id="myBtn">Instructions</button>
+        <button id="myBtn" class="button">Instructions</button>
         <div id="myModal" class="modal">
             <div class="modal-content">
                 <span class="close">&times;</span>
-                <p>Game Master: Insert your incident scenarios (in JSON format) into the "general_incidents.json" file inside the incidents folder. Use "label" for the title of the incident and "description" for the description of the incident. Pick a trainee to spin the wheel and solve the incident. <br /> You can read a comprehensvie example on how to conduct the exercise
-                    <a href="https://landing.google.com/sre/book/chapters/accelerating-sre-on-call.html#xref_training_disaster-rpg">here</a>, but, feel free to set your own roles, duration and frequency. Have fun!</p>
+                <p>Wheel of Misfortune is a game that aims to build confidence to oncall engineers via simulated
+                    outage scenarios.
+                    With the game, you practice problem debugging under stress, the understanding of the incident
+                    management protocol, and effective communication with other engineers
+                    of your team and organization. It is a great way to train new hires, interns, and seasoned
+                    engineers to become well-rounded oncall engineers.</p>
+                <h4>Terminology</h4>
+                <ul>
+                    <li>Scenario: A past or fictional incident case.</li>
+                    <li>Game Master: The host-coordinator of the session.</li>
+                    <li>Volunteer: The trainee oncall engineer.</li>
+                </ul>
+                <p>Feel free to fork the <a href="https://github.com/dastergon/wheel-of-misfortune">repository</a> or <a href="https://github.com/dastergon/wheel-of-misfortune/releases">download</a> the stable release.<br />
+                Insert your incident scenarios into the <a href="https://github.com/dastergon/wheel-of-misfortune/blob/master/incidents/general_incidents.json">general_incidents.json</a>
+                    file inside the <a href="https://github.com/dastergon/wheel-of-misfortune/tree/master/incidents">incidents/</a>
+                    folder. The file has the following format:
+                    <table>
+                        <tr>
+                            <td>title</td>
+                            <td>the title of the incident.</td>
+                        </tr>
+                        <tr>
+                            <td>scenario</td>
+                            <td>the description of the incident. It is useful to include URLs from monitoring
+                                systems, dashboards, time-series databases and playbooks.</td>
+                        </tr>
+                        <tr>
+                            <td>difficulty</td>
+                            <td>the difficulty level of the outage.</td>
+                        </tr>
+                        <tr>
+                            <td>ID</td>
+                            <td>the unique ID of the outage (you can just auto-increment).</td>
+                        </tr>
+                    </table>
+                </p>
+                <h4>Game Master</h4>
+                <ol>
+                    <li>Choose a volunteer to be the primary oncall engineer in front of the group.</li>
+                    <li>Find a balance between volunteer's experience and incident's difficulty.</li>
+                    <li>Assist volunteer by answering questions that may arise in each theoritical action or
+                        dashboard observation.</li>
+                    <ul>
+                        <li>Engage with the rest of the team and ask for different ways to debug the problem
+                            following volunteer's explanation.</li>
+                        <li>Team members may be made available over time for assistance in various topics.</li>
+                    </ul>
+                    <li>At the end, have a debrief on the learnings of the session.</li>
+                </ol>
+
+                <h4>Volunteer</h4>
+                <ol>
+                    <li>Spin the wheel and attempt to fix the theoretical outage scenario.</li>
+                    <li>Explain to the Game Master and the rest of the group, what actions you would take (lookup
+                        queries, checks in dashboards, etc.) to find the root causes, and eventually solve the
+                        incident.</li>
+                    <li>Always keep an eye on the time, since it is simulated incident response scenario and not a
+                        routine troubleshooting process. During a real incident you might have an SLA or SLO
+                        breach and therefore, you should take timing into account.</li>
+                    <li>Engage with the rest of the group. Keep them in the loop. Ask questions to different
+                        members depending on their expertise.</li>
+                </ol>
+                <p>Most importantly, <strong>have fun!</strong></p>
+                <p>You can read a comprehensvie example on how to conduct the exercise <a href="https://landing.google.com/sre/book/chapters/accelerating-sre-on-call.html#xref_training_disaster-rpg">here</a>.</p>
             </div>
         </div>
         <script>
@@ -70,13 +129,36 @@
     </div>
     <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
     <script src="static/wheel.js"></script>
-    <h3>Resources</h3>
+    <div class="timing">
+        <h4>Timing controls</h4>
+        <div class="tooltip">
+            <button id="start" class="button" onClick="stopwatch.start();">▶</button> <span class="tooltiptext">Start</span>
+        </div>
+        <div class="tooltip">
+            <button id="stop" class="button" onClick="stopwatch.stop();">||</button> <span class="tooltiptext">Pause</span>
+        </div>
+        <div class="tooltip">
+            <button id="restart" class="button" onClick="stopwatch.restart();">↻</button> <span class="tooltiptext">Restart</span></div>
+        <button class="button" onClick="stopwatch.lap();">Lap</button>
+        <button class="button" onClick="stopwatch.clear();">Clear Laps</button>
+        <div class="stopwatch"></div>
+        <ul class="results"></ul>
+        <script src="static/stopwatch.js"></script>
+    </div>
+    <br />
+    <h4>Resources</h4>
     <ul>
         <li>
-            <a href="https://landing.google.com/sre/book/chapters/accelerating-sre-on-call.html#xref_training_disaster-rpg">Disaster Role Playing</a>
+            <a href="https://landing.google.com/sre/book/chapters/accelerating-sre-on-call.html#xref_training_disaster-rpg">Disaster
+                Role Playing</a>
         </li>
         <li>
-            <a href="https://landing.google.com/sre/book/chapters/postmortem-culture.html">Postmortem Culture: Learning from Failure</a>
+            <a href="https://www.usenix.org/conference/srecon18europe/presentation/barry">Managing Misfortune for Best
+                Results</a>
+        </li>
+        <li>
+            <a href="https://landing.google.com/sre/book/chapters/postmortem-culture.html">Postmortem Culture: Learning
+                from Failure</a>
         </li>
         <li>
             <a href="https://github.com/dastergon/awesome-sre">Site Reliability Engineering Resources</a>

@@ -7,6 +7,43 @@ body {
     background-color: #f8f8f8;
 }
 
+button {
+  border:solid 2px #590F20;
+  border-radius:5px;
+  background-color: #e7e7e7; /* Green */
+  letter-spacing: 1px;
+  border: none;
+  padding: 9px 18px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+button:first-child {
+    margin-left: 0;
+}
+
+button:last-child {
+    margin-right: 0;
+}
+
+button:hover {
+  color: rgb(255, 127, 14);
+}
+
+table {
+    border-collapse: collapse;
+    background-color: white;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 5px;
+}
 
 li a {
     text-decoration: none;
@@ -18,6 +55,61 @@ li a:hover {
 
 text {
     pointer-events:none;
+}
+
+.stopwatch {
+  font-size: 2vw;
+  padding-left: 110px;
+}
+
+.results {
+  border-color: lime;
+  margin: 0;
+  padding: 0;
+  bottom: 0;
+  left: 50%;
+}
+
+#start {
+  background: #48633B;
+  color: #DAD6D6;
+}
+
+#start:hover {
+    color:white
+}
+
+#start:focus {
+    background: black;
+    color:white
+}
+
+#stop {
+  background: #721329;
+  color: #DAD6D6;
+}
+
+#stop:hover {
+    color:white
+}
+
+#stop:focus {
+    background: black;
+    color:white
+}
+
+#restart {
+  background:rgb(31, 119, 180);
+  color: #DAD6D6;
+}
+
+#restart:hover {
+    color:white
+}
+
+#restart:active {
+    background: black;
+    color:white
 }
 
 #wheel {
@@ -40,13 +132,20 @@ text {
             transform:translate(0,-50%);
 }
 
+.timing {
+    padding-left: 100px;
+}
+
 header.major {
-    padding: 0.5em;
     text-align: center;
 }
 
 header p {
-    color: #444;
+    color: #0a0a0a;
+}
+
+header li {
+  color: #0a0a0a;
 }
 
 em a {
@@ -67,44 +166,114 @@ em a:hover {
 }
 
 #footer a {
-    color: #bbb;
+    color: #c30704;
     text-decoration: none;
 }
 
+#footer a:hover {
+    color: #0a0a0a;
+    text-decoration: underline;
+}
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.5); /* Black w/ opacity */
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 40px; /* Location of the box */
+  padding-bottom: 50px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  text-align: left;
 }
 
+.modal a {
+    color: #721329;
+}
+
+.modal a:hover {
+    color: rgb(255, 127, 14);
+}
 /* Modal Content */
 .modal-content {
-    background-color: #fefefe;
-    margin: auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
+  position: relative;
+  background-color: #f8f8f8;
+  margin: auto;
+  padding: 30px;
+  width: 60%;
+  border: 1px solid #888;
+  border-radius:15px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
 }
 
 /* The Close Button */
 .close {
-    color: #aaaaaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
 }
 
 .close:hover,
 .close:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px none black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
 }

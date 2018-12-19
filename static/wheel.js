@@ -25,7 +25,6 @@ d3.json("https://dastergon.gr/wheel-of-misfortune/incidents/general_incidents.js
         .attr("class", "chartholder")
         .attr("transform", "translate(" + (w / 2 + padding.left) + "," + (h / 2 + padding.top) + ")");
 
-
     var vis = container
         .append("g");
 
@@ -55,17 +54,14 @@ d3.json("https://dastergon.gr/wheel-of-misfortune/incidents/general_incidents.js
     })
         .attr("text-anchor", "end")
         .text(function (d, i) {
-            return data[i].label;
+            return data[i].title;
         });
-
     container.on("click", spin);
 
     function spin(d) {
         container.on("click", null);
         //all slices have been seen, all done
-        console.log("OldPick: " + oldpick.length, "Data length: " + data.length);
         if (oldpick.length == data.length) {
-            console.log("done");
             container.on("click", null);
             return;
         }
@@ -95,7 +91,7 @@ d3.json("https://dastergon.gr/wheel-of-misfortune/incidents/general_incidents.js
                     .attr("fill", "#111");
                 //populate incident
                 d3.select("#incident p")
-                    .text("Scenario: " + data[picked].description);
+                    .text("Scenario: " + data[picked].scenario);
                 oldrotation = rotation;
                 container.on("click", spin);
             });
@@ -121,7 +117,7 @@ d3.json("https://dastergon.gr/wheel-of-misfortune/incidents/general_incidents.js
         .attr("y", 12)
         .attr("text-anchor", "middle")
         .text("SPIN")
-        .style({ "background-color": "#e25822", "font-weight": "bold", "font-size": "20px" });
+        .style({ "color": "white", "font-weight": "bold", "font-size": "18px" });
 
     function rotTween(to) {
         var i = d3.interpolate(oldrotation % 360, rotation);
