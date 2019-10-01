@@ -2,16 +2,14 @@
  * http://bl.ocks.org/jrue/a2aaf36b3c096925ccbf */
 
 var padding = { top: 20, right: 40, bottom: 0, left: 0 },
-    w = 600 - padding.left - padding.right,
-    h = 600 - padding.top - padding.bottom,
+    w = 400 - padding.left - padding.right,
+    h = 400 - padding.top - padding.bottom,
     r = Math.min(w, h) / 2,
     rotation = 0,
     oldrotation = 0,
     picked = 100000,
     oldpick = [],
     color = d3.scale.category20();
-
-
 
 d3.json("./incidents/general_incidents.json", function (error, data) {
     if (error) throw error;
@@ -91,7 +89,7 @@ d3.json("./incidents/general_incidents.json", function (error, data) {
                     .attr("fill", "#111");
                 //populate incident
                 d3.select("#incident p")
-                    .text("Scenario: " + data[picked].scenario);
+                    .html("<h3 class='f3 f1-m f-headline-l'>" + data[picked].title + "</h3>" + data[picked].scenario);
                 oldrotation = rotation;
                 container.on("click", spin);
             });
@@ -114,7 +112,7 @@ d3.json("./incidents/general_incidents.json", function (error, data) {
     //spin text
     container.append("text")
         .attr("x", 0)
-        .attr("y", 12)
+        .attr("y", 10)
         .attr("text-anchor", "middle")
         .text("SPIN")
         .style({ "color": "white", "font-weight": "bold", "font-size": "18px" });
