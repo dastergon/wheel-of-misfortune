@@ -13,12 +13,12 @@ button {
   background-color: #e7e7e7; /* Green */
   letter-spacing: 1px;
   border: none;
-  padding: 9px 18px;
+  padding: 10px 15px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
+  font-size: 14px;
+  margin: 3px 1px;
   cursor: pointer;
 }
 
@@ -53,13 +53,57 @@ li a:hover {
     text-decoration:underline;
 }
 
+header.major {
+    width: 70%;
+    text-align: center;
+    margin: 0 auto;
+    display: block;
+}
+
+header p {
+    color: #0a0a0a;
+}
+
+header li {
+  color: #0a0a0a;
+}
+
+em a {
+    color: #444;
+    text-decoration: none;
+}
+
+em a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    padding: 1em 0 1em 0;
+    color: #bbb;
+    font-size: 0.9em;
+    text-align: center;
+}
+
+footer a {
+    color: #c30704;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #0a0a0a;
+    text-decoration: underline;
+}
+
 text {
     pointer-events:none;
 }
 
+header #title {
+    color: #721329;
+}
+
 .stopwatch {
-  font-size: 2vw;
-  padding-left: 110px;
+  font-size: 20px;
 }
 
 .results {
@@ -112,68 +156,23 @@ text {
     color:white
 }
 
-#wheel {
-    position:absolute;
-}
-
 #incident{
-    border-width:5px;
-    word-wrap: break-word;
-    position:relative;
-    width: 500px;
-    height: 600px;
-    left: 620px;
+    text-align: left;
 }
 
 #incident p {
-    position: absolute;
-    top:50%;
-    -webkit-transform:translate(0,-50%);
-            transform:translate(0,-50%);
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 80px;
+    word-wrap: break-word;
+    max-width: 30em;
+    line-height: 1.5;
 }
 
 .timing {
-    padding-left: 100px;
-}
-
-header.major {
     text-align: center;
 }
 
-header p {
-    color: #0a0a0a;
-}
-
-header li {
-  color: #0a0a0a;
-}
-
-em a {
-    color: #444;
-    text-decoration: none;
-}
-
-em a:hover {
-    text-decoration: underline;
-}
-
-#footer {
-    background: #f8f8f8;
-    padding: 1em 0 1em 0;
-    color: #bbb;
-    font-size: 0.9em;
-    text-align: center;
-}
-
-#footer a {
-    color: #c30704;
-    text-decoration: none;
-}
-
-#footer a:hover {
-    color: #0a0a0a;
-    text-decoration: underline;
-}
 .modal {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
@@ -197,6 +196,7 @@ em a:hover {
 .modal a:hover {
     color: rgb(255, 127, 14);
 }
+
 /* Modal Content */
 .modal-content {
   position: relative;
@@ -276,4 +276,69 @@ em a:hover {
 .tooltip:hover .tooltiptext {
   visibility: visible;
   opacity: 1;
+}
+
+.cf:before, .cf:after {
+    content: " ";
+    display: table;
+}
+
+.cf:after {
+    clear: both;
+}
+
+.cf {
+    *zoom: 1;
+}
+
+.fl {
+    float: left;
+    _display: inline;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.tc {
+    text-align: center;
+}
+
+@media screen and (min-width: 50em) {
+    .w-50-ns {
+        width: 50%;
+    }
+}
+
+.f2 {
+    font-size: 2.5rem;
+    color: #721329;
+}
+
+@media screen and (min-width: 40em) and (max-width: 60em) {
+    .f2-m {
+        font-size: 2.5rem;
+    }
+}
+
+@media screen and (min-width: 60em) {
+    .f-headline-l2 {
+        font-size: 2.5rem;
+    }
+}
+
+.f3 {
+    font-size: 1.5rem;
+}
+
+@media screen and (min-width: 50em) and (max-width: 60em) {
+    .f1-m {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (min-width: 60em) {
+    .f-headline-l {
+        font-size: 1.5rem;
+    }
 }
