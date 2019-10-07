@@ -13,13 +13,13 @@ button {
   background-color: #e7e7e7; /* Green */
   letter-spacing: 1px;
   border: none;
-  padding: 10px 15px;
+  margin: 3px 1px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 14px;
-  margin: 3px 1px;
   cursor: pointer;
+  font-size: 15px;
+  padding: 12px 12px;
 }
 
 button:first-child {
@@ -102,8 +102,20 @@ header #title {
     color: #721329;
 }
 
-.stopwatch {
-  font-size: 20px;
+label {
+  display: inline-block;
+  margin: 0 5px 20px;
+}
+
+input[type='checkbox'] {
+    /* Double-sized Checkboxes */
+  -ms-transform: scale(2); /* IE */
+  -moz-transform: scale(2); /* FF */
+  -webkit-transform: scale(2); /* Safari and Chrome */
+  -o-transform: scale(2); /* Opera */
+  transform: scale(2);
+  padding: 5px;
+  cursor: pointer;
 }
 
 .results {
@@ -112,65 +124,6 @@ header #title {
   padding: 0;
   bottom: 0;
   left: 50%;
-}
-
-#start {
-  background: #48633B;
-  color: #DAD6D6;
-}
-
-#start:hover {
-    color:white
-}
-
-#start:focus {
-    background: black;
-    color:white
-}
-
-#stop {
-  background: #721329;
-  color: #DAD6D6;
-}
-
-#stop:hover {
-    color:white
-}
-
-#stop:focus {
-    background: black;
-    color:white
-}
-
-#restart {
-  background:rgb(31, 119, 180);
-  color: #DAD6D6;
-}
-
-#restart:hover {
-    color:white
-}
-
-#restart:active {
-    background: black;
-    color:white
-}
-
-#incident{
-    text-align: left;
-}
-
-#incident p {
-    margin-top: 10px;
-    margin-left: 10px;
-    margin-right: 80px;
-    word-wrap: break-word;
-    max-width: 30em;
-    line-height: 1.5;
-}
-
-.timing {
-    text-align: center;
 }
 
 .modal {
@@ -194,6 +147,7 @@ header #title {
 }
 
 .modal a:hover {
+    text-decoration: underline;
     color: rgb(255, 127, 14);
 }
 
@@ -311,19 +265,19 @@ header #title {
 }
 
 .f2 {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     color: #721329;
 }
 
 @media screen and (min-width: 40em) and (max-width: 60em) {
     .f2-m {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
     }
 }
 
 @media screen and (min-width: 60em) {
     .f-headline-l2 {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
     }
 }
 
@@ -341,4 +295,131 @@ header #title {
     .f-headline-l {
         font-size: 1.5rem;
     }
+}
+
+.container {
+  margin: 40px auto;
+  width: 400px;
+  text-align: center;
+}
+
+.timing {
+    text-align: center;
+}
+
+.stopwatch {
+  font-size: 20px;
+}
+
+.timing button {
+  font-size: 16px;
+  padding: 12px 23px;
+}
+
+#start {
+  background: #48633B;
+  color: #DAD6D6;
+}
+
+#start:hover {
+    color:white
+}
+
+#start:focus {
+    background: black;
+    color:white
+}
+
+#stop {
+  background: #721329;
+  color: #DAD6D6;
+}
+
+#stop:hover {
+    color:white
+}
+
+#stop:focus {
+    background: black;
+    color:white
+}
+
+#restart {
+  background:rgb(31, 119, 180);
+  color: #DAD6D6;
+}
+
+#restart:hover {
+    color:white
+}
+
+#restart:active {
+    background: black;
+    color:white
+}
+
+#incident{
+    text-align: left;
+}
+
+#incident p {
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 80px;
+    word-wrap: break-word;
+    max-width: 30em;
+    line-height: 1.5;
+}
+
+/*  With slight modifications from:
+ *  https://codepen.io/Thibaut/pen/ouKvy */
+.timing .progress {
+  width: 100%;
+}
+
+.timing .progress {
+  padding: 4px;
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 6px;
+  -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25), 0 1px rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25), 0 1px rgba(255, 255, 255, 0.08);
+}
+
+.timing .progress-bar {
+  height: 16px;
+  border-radius: 4px;
+	background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.05));
+  background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.05));
+  background-image: -o-linear-gradient(top, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.05));
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.05));
+  -webkit-transition: 0.4s linear;
+  -moz-transition: 0.4s linear;
+  -o-transition: 0.4s linear;
+  transition: 0.4s linear;
+  -webkit-transition-property: width, background-color;
+  -moz-transition-property: width, background-color;
+  -o-transition-property: width, background-color;
+  transition-property: width, background-color;
+  -webkit-box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.25), inset 0 1px rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.25), inset 0 1px rgba(255, 255, 255, 0.1);
+}
+
+#first:checked ~ .progress > .progress-bar {
+  width: 25%;
+  background-color: #f27011;
+}
+
+#second:checked ~ .progress > .progress-bar {
+  width: 50%;
+  background-color: #f2b01e;
+}
+
+#three:checked ~ .progress > .progress-bar {
+  width: 75%;
+  background-color: #f2d31b;
+}
+
+#four:checked ~ .progress > .progress-bar {
+  width: 100%;
+  background-color: #86e01e;
 }
