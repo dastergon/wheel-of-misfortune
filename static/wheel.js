@@ -93,6 +93,9 @@ d3.json("./incidents/general_incidents.json", function (error, data) {
                 oldrotation = rotation;
                 container.on("click", spin);
             });
+
+        // start the timewatch
+        container.on("click", stopwatch.start())
     }
 
     //make arrow
