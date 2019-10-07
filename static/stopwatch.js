@@ -22,6 +22,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
         }
     }, {
         key: 'lap', value: function lap() {
+            if (!this.running) return;
             var times = this.times;
             var li = document.createElement('li');
             li.innerText = this.format(times);
