@@ -2,8 +2,8 @@
  * http://bl.ocks.org/jrue/a2aaf36b3c096925ccbf */
 
 var padding = { top: 20, right: 40, bottom: 0, left: 0 },
-    w = 400 - padding.left - padding.right,
-    h = 400 - padding.top - padding.bottom,
+    w = 395 - padding.left - padding.right,
+    h = 395 - padding.top - padding.bottom,
     r = Math.min(w, h) / 2,
     rotation = 0,
     oldrotation = 0,
