@@ -78,10 +78,10 @@ em a:hover {
 }
 
 footer {
-    padding: 1em 0 1em 0;
+    padding-top: 40px;
+    padding-bottom: 1em;
     color: #bbb;
     font-size: 0.9em;
-    text-align: center;
 }
 
 footer a {
@@ -105,17 +105,6 @@ header #title {
 label {
   display: inline-block;
   margin: 0 5px 20px;
-}
-
-input[type='checkbox'] {
-    /* Double-sized Checkboxes */
-  -ms-transform: scale(2); /* IE */
-  -moz-transform: scale(2); /* FF */
-  -webkit-transform: scale(2); /* Safari and Chrome */
-  -o-transform: scale(2); /* Opera */
-  transform: scale(2);
-  padding: 5px;
-  cursor: pointer;
 }
 
 .results {
@@ -264,6 +253,18 @@ input[type='checkbox'] {
     }
 }
 
+@media screen and (min-width: 50em) {
+    .w-30-ns {
+        width: 30%;
+    }
+}
+
+@media screen and (min-width: 50em) {
+    .w-35-ns {
+        width: 35%;
+    }
+}
+
 .f2 {
     font-size: 2.2rem;
     color: #721329;
@@ -298,9 +299,10 @@ input[type='checkbox'] {
 }
 
 .container {
+  position: relative;
   margin: 40px auto;
-  width: 400px;
-  text-align: center;
+  padding-left: 15px;
+  font-size: 16px;
 }
 
 .timing {
@@ -373,11 +375,7 @@ input[type='checkbox'] {
 
 /*  With slight modifications from:
  *  https://codepen.io/Thibaut/pen/ouKvy */
-.timing .progress {
-  width: 100%;
-}
-
-.timing .progress {
+.progress {
   padding: 4px;
   background: rgba(0, 0, 0, 0.25);
   border-radius: 6px;
@@ -385,7 +383,7 @@ input[type='checkbox'] {
   box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25), 0 1px rgba(255, 255, 255, 0.08);
 }
 
-.timing .progress-bar {
+.progress-bar {
   height: 16px;
   border-radius: 4px;
 	background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.05));
@@ -406,20 +404,121 @@ input[type='checkbox'] {
 
 #first:checked ~ .progress > .progress-bar {
   width: 25%;
-  background-color: #f27011;
+  background-color: #e65100;
 }
 
 #second:checked ~ .progress > .progress-bar {
   width: 50%;
-  background-color: #f2b01e;
+  background-color: #ffc107;
 }
 
 #three:checked ~ .progress > .progress-bar {
   width: 75%;
-  background-color: #f2d31b;
+  background-color: #ffd54f;
 }
 
 #four:checked ~ .progress > .progress-bar {
   width: 100%;
-  background-color: #86e01e;
+  background-color: #4caf50;
+}
+
+/* Slight modifications from:
+ * https://www.cssscript.com/beautiful-checkbox-and-radio-button-replacement-with-pure-css-magic-check/
+ */
+@keyframes hover-color {
+  from {
+    border-color: #c0c0c0; }
+  to {
+    border-color: #3e97eb; } }
+
+.magic-checkbox {
+  position: absolute;
+  display: none;
+  }
+
+.magic-checkbox[disabled] {
+  cursor: not-allowed; }
+
+
+.magic-checkbox + label {
+  position: relative;
+  padding-left: 30px;
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+.magic-checkbox + label:hover:before {
+    animation-duration: 0.4s;
+    animation-fill-mode: both;
+    animation-name: hover-color;
+}
+
+.magic-checkbox + label:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    content: '';
+    border: 1px solid #c0c0c0; }
+    .magic-checkbox + label:after {
+    position: absolute;
+    display: none;
+    content: '';
+}
+
+.magic-checkbox[disabled] + label {
+  cursor: not-allowed;
+  color: #e4e4e4;
+}
+
+.magic-checkbox[disabled] + label:hover,
+.magic-checkbox[disabled] + label:before,
+.magic-checkbox[disabled] + label:after {
+  cursor: not-allowed;
+}
+
+.magic-checkbox[disabled] + label:hover:before {
+  border: 1px solid #e4e4e4;
+  animation-name: none;
+}
+
+.magic-checkbox[disabled] + label:before {
+  border-color: #e4e4e4;
+}
+
+.magic-checkbox:checked + label:before {
+  animation-name: none;
+}
+
+.magic-checkbox:checked + label:after {
+  display: block;
+}
+
+.magic-checkbox + label:before {
+  border-radius: 3px;
+}
+
+.magic-checkbox + label:after {
+  top: 2px;
+  left: 7px;
+  box-sizing: border-box;
+  width: 6px;
+  height: 12px;
+  transform: rotate(45deg);
+  border-width: 2px;
+  border-style: solid;
+  border-color: #fff;
+  border-top: 0;
+  border-left: 0; }
+
+.magic-checkbox:checked + label:before {
+  border: #3e97eb;
+  background: #3e97eb;
+}
+
+.magic-checkbox:checked[disabled] + label:before {
+  border: #c9e2f9;
+  background: #c9e2f9;
 }

@@ -202,24 +202,24 @@
             <p></p>
         </article>
     </div>
-    <div class="timing">
-        <div class="container">
-            <input type="checkbox" name="progress" value="first" id="first">
+        <div class="container fl w-35-ns tc">
+            <input  type="checkbox" class="magic-checkbox" name="progress" value="first" id="first">
             <label for="first">Acknowledge</label>
 
-            <input type="checkbox" name="progress" value="second" id="second" onClick="stopwatch.lap();">
+            <input type="checkbox" class="magic-checkbox" name="progress" value="second" id="second" onClick="stopwatch.lap();">
             <label for="second">Mitigate</label>
 
-            <input type="checkbox" name="progress" value="three" id="three" onClick="stopwatch.lap();">
+            <input type="checkbox" class="magic-checkbox" name="progress" value="three" id="three" onClick="stopwatch.lap();">
             <label for="three">Triage</label>
 
-            <input type="checkbox" name="progress" value="four" id="four" onClick="stopwatch.lap();">
+            <input type="checkbox" class="magic-checkbox" name="progress" value="four" id="four" onClick="stopwatch.lap();">
             <label for="four">Resolve</label>
 
             <div class="progress">
                 <div class="progress-bar"></div>
             </div>
         </div>
+    <div class="timing fl w-100 w-50-ns tc">
         <h4>Timing controls</h4>
         <div class="tooltip">
             <button id="start" class="button" onClick="stopwatch.start();">▶</button> <span
@@ -239,8 +239,7 @@
         <ul class="results"></ul>
         <script src="static/stopwatch.js"></script>
     </div>
-    <br />
-    <footer>
+    <footer class="fl w-100 tc">
         <a href="https://dastergon.gr">Pavlos Ratis</a> | 2019
     </footer>
 </body>
