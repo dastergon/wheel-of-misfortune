@@ -313,6 +313,10 @@ label {
   font-size: 20px;
 }
 
+.timing ul {
+      list-style-type: none;
+  }
+
 .timing button {
   font-size: 16px;
   padding: 12px 23px;
