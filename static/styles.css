@@ -260,8 +260,8 @@ label {
 }
 
 @media screen and (min-width: 50em) {
-    .w-35-ns {
-        width: 35%;
+    .w-40-ns {
+        width: 40%;
     }
 }
 
