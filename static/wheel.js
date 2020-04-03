@@ -2,8 +2,8 @@
  * http://bl.ocks.org/jrue/a2aaf36b3c096925ccbf */
 
 var padding = { top: 20, right: 40, bottom: 0, left: 0 },
-    w = 395 - padding.left - padding.right,
-    h = 395 - padding.top - padding.bottom,
+    w = 500 - padding.left - padding.right,
+    h = 500 - padding.top - padding.bottom,
     r = Math.min(w, h) / 2,
     rotation = 0,
     oldrotation = 0,
@@ -16,11 +16,9 @@ d3.json("./incidents/general_incidents.json", function (error, data) {
     var svg = d3.select("#wheel")
         .append("svg")
         .data([data])
-        .attr("width", w + padding.left + padding.right)
-        .attr("height", h + padding.top + padding.bottom);
+        .attr("viewBox", "0 0 500 500");
 
     var container = svg.append("g")
-        .attr("class", "chartholder")
         .attr("transform", "translate(" + (w / 2 + padding.left) + "," + (h / 2 + padding.top) + ")");
 
     var vis = container
@@ -89,13 +87,13 @@ d3.json("./incidents/general_incidents.json", function (error, data) {
                     .attr("fill", "#111");
                 //populate incident
                 d3.select("#incident p")
-                    .html("<h3 class='f3 f1-m f-headline-l'>" + data[picked].title + "</h3>" + data[picked].scenario);
+                    .html("<h4 class=\"f4 center mw6\">" + data[picked].title + "</h4>" + data[picked].scenario);
                 oldrotation = rotation;
                 container.on("click", spin);
             });
 
         // start the timewatch
-        container.on("click", stopwatch.start())
+        container.on("click", stopwatch.start(), changeControls())
     }
 
     //make arrow
