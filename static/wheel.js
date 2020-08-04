@@ -2,8 +2,8 @@
  * http://bl.ocks.org/jrue/a2aaf36b3c096925ccbf */
 
 function custom_colors(n) {
-  var colors= [ "#388E3C", "#1976D2", "#D32F2F", "#FFA000", "#388E3C", "#990099", "#0099c6", "#C2185B", "#81C784", "#D32F2F", "#1976D2", "#994499", "#4DD0E1", "#AED581", "#536DFE", "#FBC02D", "#C62828", "#AB47BC", "#66BB6A", "#90A4AE", "#0D47A1"];
-  return colors[n % colors.length];
+    var colors = ["#388E3C", "#1976D2", "#D32F2F", "#FFA000", "#388E3C", "#990099", "#0099c6", "#C2185B", "#81C784", "#D32F2F", "#1976D2", "#994499", "#4DD0E1", "#AED581", "#536DFE", "#FBC02D", "#C62828", "#AB47BC", "#66BB6A", "#90A4AE", "#0D47A1"];
+    return colors[n % colors.length];
 }
 
 var padding = { top: 20, right: 40, bottom: 0, left: 0 },
@@ -89,15 +89,20 @@ d3.json("./incidents/general_incidents.json", function (error, data) {
                 //mark incident as seen
                 d3.select(".slice:nth-child(" + (picked + 1) + ") path")
                     .attr("fill", "#111");
-                //populate incident
-                d3.select("#incident p")
-                    .html("<h4 class=\"f4 center mw6\">" + data[picked].title + "</h4>" + data[picked].scenario);
+                // if Ink story is provided, override the actual scenario.
+                if (data[picked].inkstory != undefined) {
+                    //populate incident
+                    d3.select("#incident p")
+                        .html("<h4 class=\"f4 center mw6\">" + data[picked].title + "</h4>" + "<div id=\"play-area\"> <ol id =\"choices\"><ol></div>");
+                    container.on("click", spin, stopwatch.reset(), stopwatch.start(), changeControls(), loadStory(data[picked].inkstory));
+                   } else {
+                    //populate incident
+                    d3.select("#incident p")
+                        .html("<h4 class=\"f4 center mw6\">" + data[picked].title + "</h4>" + data[picked].scenario);
+                    container.on("click", spin, stopwatch.reset(), stopwatch.start(), changeControls());
+                }
                 oldrotation = rotation;
-                container.on("click", spin);
             });
-
-        // start the timewatch
-        container.on("click", stopwatch.start(), changeControls())
     }
 
     //make arrow

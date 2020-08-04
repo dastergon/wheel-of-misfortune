@@ -68,7 +68,7 @@
         <a href="/">
             <h1 class="athelas i white-ft f1">Wheel of Misfortune</h1>
         </a>
-        <h2 class="white-ft f4">A role-playing game for incident management training.</h2>
+        <h1 class="white-ft f4">A role-playing game for incident management training</h1>
         <small class="white-ft ">Inspired by the
             <a
                 href="https://landing.google.com/sre/book/chapters/accelerating-sre-on-call.html#xref_training_disaster-rpg">Site
@@ -82,7 +82,7 @@
                 d="M16 0 A16 16 0 0 1 16 32 A16 16 0 0 1 16 0 M19 15 L13 15 L13 26 L19 26 z M16 6 A3 3 0 0 0 16 12 A3 3 0 0 0 16 6">
             </path>
         </svg>
-        <small class="ml3"><a class="navy" href="instructions.html">Instructions</a></small>
+        <div class="ml3"><a class="navy" href="instructions.html">Instructions</a></div>
     </div>
 
     <article class="cf pa4 mw center bg-white br3 pa3 mv4 ba b--black-10">
@@ -97,9 +97,9 @@
                 engineers to become well-rounded oncall engineers.</p>
             <h4>Terminology</h4>
             <ul>
-                <li>Scenario: A past or fictional incident case.</li>
-                <li>Game Master: The host-coordinator of the session.</li>
-                <li>Volunteer: The trainee oncall engineer.</li>
+                <li><strong>Scenario</strong>: A past or fictional incident case.</li>
+                <li><strong>Game Master</strong>: The host-coordinator of the session.</li>
+                <li><strong>Volunteer</strong>: The trainee oncall engineer.</li>
             </ul>
             <p>Feel free to fork the <a href="https://github.com/dastergon/wheel-of-misfortune">repository</a> or <a
                     href="https://github.com/dastergon/wheel-of-misfortune/releases">download</a> the stable
@@ -109,29 +109,41 @@
                 file inside the <a
                     href="https://github.com/dastergon/wheel-of-misfortune/tree/master/incidents">incidents/</a>
                 folder. The file has the following format:
-                <table>
-                    <tr>
-                        <td>title</td>
-                        <td>the title of the incident.</td>
-                    </tr>
-                    <tr>
-                        <td>scenario</td>
-                        <td>the description of the incident. It is useful to include URLs from monitoring
-                            systems, dashboards, time-series databases and playbooks.</td>
-                    </tr>
-                    <tr>
-                        <td>difficulty</td>
-                        <td>the difficulty level of the outage.</td>
-                    </tr>
-                    <tr>
-                        <td>ID</td>
-                        <td>the unique ID of the outage (you can just auto-increment).</td>
-                    </tr>
-                </table>
-                <p>
-                However, you can also use <a
+            <table>
+                <tr>
+                    <td><b>title</b></td>
+                    <td>the title of the incident.</td>
+                </tr>
+                <tr>
+                    <td><b>scenario</b></td>
+                    <td>the description of the incident. It is useful to include URLs from monitoring
+                        systems, dashboards, time-series databases and playbooks.</td>
+                </tr>
+                <tr>
+                    <td><b>ID</b></td>
+                    <td>the unique ID of the outage (you can just auto-increment).</td>
+                </tr>
+                <tr>
+                    <td><b>inkstory</b></td>
+                    <td>the path to an <a href="https://www.inklestudios.com/ink/">Ink</a> story file in JSON format.
+                    </td>
+                </tr>
+            </table>
+            <p>You could use <a
                     href="https://github.com/dastergon/wheel-of-misfortune/blob/master/incidents/general_incidents.jsonnet">general_incidents.jsonnet</a>
-                as an example in case you want to generate your incident scenarios using Jsonnet.</p>
+                as an example in case you want to generate your incident scenarios using <a
+                    href="https://jsonnet.org/">Jsonnet.</a>
+            <p>Wheel of Misfortune also supports the <a href="https://github.com/inkle/ink">Ink</a> scripting language
+                for writing incident response narratives, for team and invdividual training. <a
+                    href="https://github.com/inkle/ink">Ink</a> is a scripting language for writing interactive
+                narrative stories. It enables us to write interactive incident response narratives for
+                team or individual trainings. You can use <a href="https://github.com/inkle/inky">Inky</a> to write an
+                interactive narrative for an
+                incident and then export the story as JSON. Then, you can store the story file inside the
+                <a href="https://github.com/dastergon/wheel-of-misfortune/tree/master/incidents">incidents/</a> folder.
+                You can have a look at the <a
+                    href="https://github.com/dastergon/wheel-of-misfortune/tree/master/incidentsredis-story.json">incident
+                    narrative example</a>.</p>
             </p>
             <h4>Game Master</h4>
             <ol>
@@ -193,6 +205,10 @@
             </ul>
         </div>
     </article>
+
+    <footer class="pv4 ph4">
+        <small class="f4 db tc"><a href="https://dastergon.gr" class="link">Pavlos Ratis</a> | 2020</small>
+    </footer>
 </body>
 
 </html>

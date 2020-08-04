@@ -1,7 +1,7 @@
 # Wheel of Misfortune
-**Wheel of Misfortune** is a game that aims to build confidence to oncall engineers via simulated outage scenarios. 
-With the game, you practice problem debugging under stress, the understanding of the incident management protocol, 
-and effective communication with other engineers of your team and organization. 
+**Wheel of Misfortune** is a game that aims to build confidence to oncall engineers via simulated outage scenarios.
+With the game, you practice problem debugging under stress, the understanding of the incident management protocol,
+and effective communication with other engineers of your team and organization.
 It is a great way to train new hires, interns, and seasoned engineers to become well-rounded oncall engineers.
 
 The game is inspired by the [Site Reliability Engineering](https://landing.google.com/sre/book/chapters/accelerating-sre-on-call.html#xref_training_disaster-rpg) book.
@@ -15,18 +15,22 @@ The demo website is available at: https://dastergon.gr/wheel-of-misfortune
 *   **Game Master**: The host-coordinator of the session.
 *   **Volunteer**: The trainee oncall engineer.
 
-Feel free to fork the [repository](https://github.com/dastergon/wheel-of-misfortune) or [download](https://github.com/dastergon/wheel-of-misfortune/releases) the stable release.  
+Feel free to fork the [repository](https://github.com/dastergon/wheel-of-misfortune) or [download](https://github.com/dastergon/wheel-of-misfortune/releases) the stable release.
 Insert your incident scenarios into the [general\_incidents.json](https://github.com/dastergon/wheel-of-misfortune/blob/master/incidents/general_incidents.json) file inside the [incidents/](https://github.com/dastergon/wheel-of-misfortune/tree/master/incidents) folder.
 
 The file has the following format:
-- ID: the unique ID of the outage (you can just auto-increment).
-- title: the title of the incident.
-- scenario: the description of the incident. It is useful to include URLs from monitoring systems, dashboards, time-series databases and playbooks.
-- difficulty: the difficulty level of the outage. (Not yet supported)
+- **ID**: the unique ID of the outage (you can just auto-increment).
+- **title**: the title of the incident.
+- **scenario**: the description of the incident. It is useful to include URLs from monitoring systems, dashboards, time-series databases and playbooks.
+- **inkstory**: the path to an [Ink](https://www.inklestudios.com/ink/) story file in JSON format.
 
-However, you can also use [general\_incidents.jsonnet](https://github.com/dastergon/wheel-of-misfortune/blob/master/incidents/general_incidents.jsonnet) as an example, in case you want to generate your incident scenarios using Jsonnet.
+You can also use [general\_incidents.jsonnet](https://github.com/dastergon/wheel-of-misfortune/blob/master/incidents/general_incidents.jsonnet) as an example, in case you want to generate your incident scenarios using [Jsonnet](https://jsonnet.org/).
 
-### Game Master
+### Ink
+[Ink](https://github.com/inkle/ink) is a scripting language for writing interactive narrative stories. It enables us to write interactive incident response narratives for team or individual trainings. You can use [Inky](https://github.com/inkle/inky to write an interactive narrative for an incident and then export the story as JSON. Then, you can store the story file inside the [incidents/](https://github.com/dastergon/wheel-of-misfortune/tree/master/incidents) folder. You can read an example incident narrative [here](./incidents/redis-story.json).
+
+### Role Playing
+#### Game Master
 
 1.  Choose a volunteer to be the primary oncall engineer in front of the group.
 2.  Find a balance between volunteer's experience and incident's difficulty.
@@ -46,7 +50,8 @@ Most importantly, **have fun!**
 
 You can [read](https://landing.google.com/sre/book/chapters/accelerating-sre-on-call.html#xref_training_disaster-rpg) a comprehensive example on how to conduct the exercise in the Google SRE book.
 
-#### Resources
+
+### Resources
 
 *   [Disaster Role Playing](https://landing.google.com/sre/book/chapters/accelerating-sre-on-call.html#xref_training_disaster-rpg)
 *   [Managing Misfortune for Best Results](https://www.usenix.org/conference/srecon18europe/presentation/barry)
