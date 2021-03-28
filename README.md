@@ -1,8 +1,8 @@
 # Wheel of Misfortune
-**Wheel of Misfortune** is a game that aims to build confidence to oncall engineers via simulated outage scenarios.
-With the game, you practice problem debugging under stress, the understanding of the incident management protocol,
+**Wheel of Misfortune** is a game that aims to build confidence in on-call engineers via simulated outage scenarios.
+With the game, you practice problem debugging under stress, understanding the incident management protocol,
 and effective communication with other engineers of your team and organization.
-It is a great way to train new hires, interns, and seasoned engineers to become well-rounded oncall engineers.
+It is a great way to train new hires, interns, and seasoned engineers to become well-rounded on-call engineers.
 
 The game is inspired by the [Site Reliability Engineering](https://landing.google.com/sre/book/chapters/accelerating-sre-on-call.html#xref_training_disaster-rpg) book.
 
