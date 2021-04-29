@@ -16,7 +16,7 @@ The demo website is available at: https://dastergon.gr/wheel-of-misfortune
 *   **Volunteer**: The trainee on-call engineer.
 
 Feel free to fork the [repository](https://github.com/dastergon/wheel-of-misfortune) or [download](https://github.com/dastergon/wheel-of-misfortune/releases) the stable release.
-Insert your incident scenarios into the [general\_incidents.json](https://github.com/dastergon/wheel-of-misfortune/blob/master/incidents/general_incidents.json) file inside the [incidents/](https://github.com/dastergon/wheel-of-misfortune/tree/master/incidents) folder.
+Copy the [general\_incidents.json.sample](incidents/general\_incidents.json.sample) file to *general_incidents.json*, inside the [incidents/](incidents/) directory, and insert your incident scenarios into it.
 
 The file has the following format:
 - **ID**: the unique ID of the outage (you can just auto-increment).
@@ -24,10 +24,10 @@ The file has the following format:
 - **scenario**: the description of the incident. It is useful to include URLs from monitoring systems, dashboards, time-series databases and playbooks.
 - **inkstory**: the path to an [Ink](https://www.inklestudios.com/ink/) story file in JSON format.
 
-You can also use [general\_incidents.jsonnet](https://github.com/dastergon/wheel-of-misfortune/blob/master/incidents/general_incidents.jsonnet) as an example, in case you want to generate your incident scenarios using [Jsonnet](https://jsonnet.org/).
+You can also use [general\_incidents.jsonnet](incidents/general_incidents.jsonnet.sample) as an example, in case you want to generate your incident scenarios using [Jsonnet](https://jsonnet.org/).
 
 ### Ink
-[Ink](https://github.com/inkle/ink) is a scripting language for writing interactive narrative stories. It enables us to write interactive incident response narratives for team or individual trainings. You can use [Inky](https://github.com/inkle/inky) to write an interactive narrative for an incident and then export the story as JSON. Then, you can store the story file inside the [incidents/](https://github.com/dastergon/wheel-of-misfortune/tree/master/incidents) folder and associate the Ink story file with an Incident scenario using the **inkstory** key. You can read an example incident narrative [here](https://github.com/dastergon/wheel-of-misfortune/tree/master/incidents/redis-story.json).
+[Ink](https://github.com/inkle/ink) is a scripting language for writing interactive narrative stories. It enables us to write interactive incident response narratives for team or individual trainings. You can use [Inky](https://github.com/inkle/inky) to write an interactive narrative for an incident and then export the story as JSON. Then, you can store the story file inside the [incidents/](incidents/) folder and associate the Ink story file with an Incident scenario using the **inkstory** key. You can read an example incident narrative [here](https://github.com/dastergon/wheel-of-misfortune/tree/master/incidents/redis-story.json).
 
 ### Role Playing
 #### Game Master
