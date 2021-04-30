@@ -10,12 +10,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: |
-          pushd incidents/
-          ls | while read i; do cp $i ${i/.sample/}; done
-          popd
+      - name: Copy needed files and dirs into the public/ directory
+        run: |
+          mkdir -p public/incidents
+          for source in *.html static; do cp -r $source public/; done
+          ls incidents/ | while read i; do cp incidents/$i public/incidents/${i/.sample/}; done
       - uses: crazy-max/ghaction-github-pages@v2
         with:
-          build_dir: .
+          commit_message: Deploy from ${{ github.ref }}@${{ github.sha }}
+          build_dir: public
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
