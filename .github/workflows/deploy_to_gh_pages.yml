@@ -1,0 +1,21 @@
+name: Deploy Wheel of Misfortune to GitHub Pages
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: |
+          pushd incidents/
+          ls | while read i; do cp $i ${i/.sample/}; done
+          popd
+      - uses: crazy-max/ghaction-github-pages@v2
+        with:
+          build_dir: .
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
