@@ -6,7 +6,7 @@ It is a great way to train new hires, interns, and seasoned engineers to become 
 
 The game is inspired by the [Site Reliability Engineering](https://landing.google.com/sre/book/chapters/accelerating-sre-on-call.html#xref_training_disaster-rpg) book.
 
-The demo website is available at: https://dastergon.gr/wheel-of-misfortune
+[Demo website](https://dastergon.gr/wheel-of-misfortune)
 
 ## Instructions
 ### Terminology
