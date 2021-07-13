@@ -2,7 +2,7 @@
     {
         "ID": "1",
         "title": "Incident 1",
-        "scenario": "You received alerts that your MySQL master does not accept writes..."
+        "scenario": "You received alerts that the Lab Software (LIMS) is down. Multiple customers notifies us that they are receiving 5XX errors on the API"
     },
     {
         "ID": "2",
