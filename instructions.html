@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+    <title>Wheel of Misfortune</title>
+    <meta name="author" content="Pavlos Ratis">
+    <meta name="description" content="A role-playing game for incident management training">
+    <meta name="keywords" content="Incident Response,Trainng,Site Reliability Engineering,SRE,Oncall">
+    <link rel="stylesheet" href="static/styles.css">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="static/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="static/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="static/favicon-16x16.png">
+    <link rel="manifest" href="static/site.webmanifest">
+</head>
+
+<body>
+    <a href="https://github.com/dastergon/wheel-of-misfortune" class="github-corner"
+        aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250"
+            style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true">
+            <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+            <path
+                d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+                fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+            <path
+                d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+                fill="currentColor" class="octo-body"></path>
+        </svg></a>
+    <style>
+        .github-corner:hover .octo-arm {
+            animation: octocat-wave 560ms ease-in-out
+        }
+
+        @keyframes octocat-wave {
+
+            0%,
+            100% {
+                transform: rotate(0)
+            }
+
+            20%,
+            60% {
+                transform: rotate(-25deg)
+            }
+
+            40%,
+            80% {
+                transform: rotate(10deg)
+            }
+        }
+
+        @media (max-width:500px) {
+            .github-corner:hover .octo-arm {
+                animation: none
+            }
+
+            .github-corner .octo-arm {
+                animation: octocat-wave 560ms ease-in-out
+            }
+        }
+    </style>
+
+    <header class="tc pv4 bg-blue">
+        <a href="/">
+            <h1 class="athelas i white-ft f1">Wheel of Misfortune</h1>
+        </a>
+        <h1 class="white-ft f4">A role-playing game for incident management training</h1>
+        <small class="white-ft ">Inspired by the
+            <a
+                href="https://landing.google.com/sre/book/chapters/accelerating-sre-on-call.html#xref_training_disaster-rpg">Site
+                Reliability Engineering book</a>
+        </small>
+    </header>
+    <div class="flex items-center justify-center bg-lightest-blue navy pa3">
+        <svg class="w1" data-icon="info" viewBox="0 0 32 32" style="fill:currentcolor">
+            <title>info icon</title>
+            <path
+                d="M16 0 A16 16 0 0 1 16 32 A16 16 0 0 1 16 0 M19 15 L13 15 L13 26 L19 26 z M16 6 A3 3 0 0 0 16 12 A3 3 0 0 0 16 6">
+            </path>
+        </svg>
+        <div class="ml3"><a class="navy" href="instructions.html">Instructions</a></div>
+    </div>
+
+    <article class="cf pa4 mw center bg-white br3 pa3 mv4 ba b--black-10">
+        <div class="fl w-100 mw mw-h center">
+            <h2 class="f6 center mw6 tc">Instructions</h2>
+            <hr class="mw3 bb bw1 b--black-10">
+            <p>Wheel of Misfortune is a game that aims to build confidence to oncall engineers via simulated
+                outage scenarios.
+                With the game, you practice problem debugging under stress, the understanding of the incident
+                management protocol, and effective communication with other engineers
+                of your team and organization. It is a great way to train new hires, interns, and seasoned
+                engineers to become well-rounded oncall engineers.</p>
+            <h4>Terminology</h4>
+            <ul>
+                <li><strong>Scenario</strong>: A past or fictional incident case.</li>
+                <li><strong>Game Master</strong>: The host-coordinator of the session.</li>
+                <li><strong>Volunteer</strong>: The trainee oncall engineer.</li>
+            </ul>
+            <p>Feel free to fork the <a href="https://github.com/dastergon/wheel-of-misfortune">repository</a> or <a
+                    href="https://github.com/dastergon/wheel-of-misfortune/releases">download</a> the stable
+                release.<br />
+                Insert your incident scenarios into the <a
+                    href="https://github.com/dastergon/wheel-of-misfortune/blob/master/incidents/general_incidents.json">general_incidents.json</a>
+                file inside the <a
+                    href="https://github.com/dastergon/wheel-of-misfortune/tree/master/incidents">incidents/</a>
+                folder. The file has the following format:
+            <table>
+                <tr>
+                    <td><b>title</b></td>
+                    <td>the title of the incident.</td>
+                </tr>
+                <tr>
+                    <td><b>scenario</b></td>
+                    <td>the description of the incident. It is useful to include URLs from monitoring
+                        systems, dashboards, time-series databases and playbooks.</td>
+                </tr>
+                <tr>
+                    <td><b>ID</b></td>
+                    <td>the unique ID of the outage (you can just auto-increment).</td>
+                </tr>
+                <tr>
+                    <td><b>inkstory</b></td>
+                    <td>the path to an <a href="https://www.inklestudios.com/ink/">Ink</a> story file in JSON format.
+                    </td>
+                </tr>
+            </table>
+            <p>You could use <a
+                    href="https://github.com/dastergon/wheel-of-misfortune/blob/master/incidents/general_incidents.jsonnet">general_incidents.jsonnet</a>
+                as an example in case you want to generate your incident scenarios using <a
+                    href="https://jsonnet.org/">Jsonnet.</a>
+            <p>Wheel of Misfortune also supports the <a href="https://github.com/inkle/ink">Ink</a> scripting language
+                for writing incident response narratives, for team and invdividual training. <a
+                    href="https://github.com/inkle/ink">Ink</a> is a scripting language for writing interactive
+                narrative stories. It enables us to write interactive incident response narratives for
+                team or individual trainings. You can use <a href="https://github.com/inkle/inky">Inky</a> to write an
+                interactive narrative for an
+                incident and then export the story as JSON. Then, you can store the story file inside the
+                <a href="https://github.com/dastergon/wheel-of-misfortune/tree/master/incidents">incidents/</a> folder and associate the Ink story file with an Incident scenario using the <b>inkstory</b> key. 
+                You can have a look at the <a
+                    href="https://github.com/dastergon/wheel-of-misfortune/tree/master/incidentsredis-story.json">incident
+                    narrative example</a>.</p>
+            </p>
+            <h4>Game Master</h4>
+            <ol>
+                <li>Choose a volunteer to be the primary oncall engineer in front of the group.</li>
+                <li>Find a balance between volunteer's experience and incident's difficulty.</li>
+                <li>Assist volunteer by answering questions that may arise in each theoretical action or
+                    dashboard observation.</li>
+                <ul>
+                    <li>Engage with the rest of the team and ask for different ways to debug the problem
+                        following the volunteer's explanation.</li>
+                    <li>Team members may be made available over time for assistance in various topics.</li>
+                </ul>
+                <li>At the end, have a debrief on the learnings of the session.</li>
+            </ol>
+
+            <h4>Volunteer</h4>
+            <ol>
+                <li>Spin the wheel and attempt to fix the theoretical outage scenario.</li>
+                <li>Explain to the Game Master and the rest of the group what actions you would take (lookup
+                    queries, checks in dashboards, etc.) to find the root causes, and eventually solve the
+                    incident.</li>
+                <li>Always keep an eye on the time, since it is simulated incident response scenario and not a
+                    routine troubleshooting process. During a real incident you might have an SLA or SLO
+                    breach and therefore you should take timing into account.</li>
+                <li>Engage with the rest of the group. Keep them in the loop. Ask questions to different
+                    members depending on their expertise.</li>
+            </ol>
+            <p>Most importantly, <strong>have fun!</strong></p>
+            <p>You can read a comprehensive example on how to conduct the exercise <a
+                    href="https://landing.google.com/sre/book/chapters/accelerating-sre-on-call.html#xref_training_disaster-rpg">here</a>.
+            </p>
+
+            <h4>Resources</h4>
+            <ul>
+                <li>
+                    <a
+                        href="https://landing.google.com/sre/book/chapters/accelerating-sre-on-call.html#xref_training_disaster-rpg">Disaster
+                        Role Playing</a>
+                </li>
+                <li>
+                    <a href="https://www.usenix.org/conference/srecon18europe/presentation/barry">Managing
+                        Misfortune for Best
+                        Results</a>
+                </li>
+                <li>
+                    <a href="https://landing.google.com/sre/book/chapters/postmortem-culture.html">Postmortem
+                        Culture: Learning
+                        from Failure</a>
+                </li>
+                <li>
+                    <a href="https://github.com/dastergon/postmortem-templates">Postmortem Templates</a>
+                </li>
+                <li>
+                    <a href="https://postmortems.app">Postmortems Metadata Index</a>
+                </li>
+                <li>
+                    <a href="https://github.com/dastergon/awesome-sre">Site Reliability Engineering Resources</a>
+                </li>
+            </ul>
+        </div>
+    </article>
+
+    <footer class="pv4 ph4">
+        <small class="f4 db tc"><a href="https://dastergon.gr" class="link">Pavlos Ratis</a> | 2020</small>
+    </footer>
+</body>
+
+</html>

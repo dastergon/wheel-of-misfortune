@@ -1,0 +1,43 @@
+[
+    {
+        "ID": "1",
+        "title": "Incident 1",
+        "scenario": "You received alerts that your MySQL master does not accept writes..."
+    },
+    {
+        "ID": "2",
+        "title": "Incident 2",
+        "scenario": "You've received alerts that your load balancer is down..."
+    },
+    {
+        "ID": "3",
+        "title": "Incident 3",
+        "scenario": "You've received an alert that your Blob storage system is unable to store objects..."
+    },
+    {
+        "ID": "4",
+        "title": "Incident 4",
+        "scenario": "You've received alerts that your DC eu-west-1 has a power outage..."
+    },
+    {
+        "ID": "5",
+        "title": "Incident 5",
+        "inkstory": "incidents/redis-story.json",
+        "scenario": "You've received an alert that your Redis server is killed..."
+    },
+    {
+        "ID": "6",
+        "title": "Incident 6",
+        "scenario": "You've received alerts of high HTTP 5xx error rate..."
+    },
+    {
+        "ID": "7",
+        "title": "Incident 7",
+        "scenario": "You've received alerts that there is high query latency in the RPC servers..."
+    },
+    {
+        "ID": "8",
+        "title": "Incident 8",
+        "scenario": "You've received an alert that an LDAP client cannot query LDAP server"
+    }
+]
